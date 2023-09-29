@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Assignment</title>
+</head>
+<body>
+
+<h2>Author entry - Venkatesh Koya</h2>
+
+<form>
+    <label for="secretAuthor">The hidden author name </label>
+    <input type ="password" id="secretAuthor" value="Dickens">
+    <br>
+    <label for="guessAuthor">Guess the author </label>
+    <input type ="text" id="guessAuthor">
+    <br>
+
+    <input type="button" onclick="checkAuthor()" value="Check the guess">
+</form>
+
+
+<p>Results: <span id="result"></span></p>
+
+<script> 
+    let good = 0;
+    let oops =0;
+
+function checkAuthor() {
+    const secretAuthor = document.getElementById("secretAuthor").value;
+    const guessAuthor = document.getElementById("guessAuthor").value;
+    
+    if(secretAuthor === guessAuthor){
+        good++;
+        alert("You got it right");
+    } else {
+        oops++;
+        alert("Sorry");
+    }
+    const resultElement = document.getElementById("result");
+    resultElement.textContent = `Correct guess ${good} | Wrong guess ${oops}`;
+}
+</script>
+
+</body>
+</html> 
