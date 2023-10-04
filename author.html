@@ -3,6 +3,7 @@
 <head>
     <title>JavaScript Assignment</title>
 </head>
+
 <body>
 
 <h2>Author entry - Venkatesh Koya</h2>
@@ -21,6 +22,7 @@
 
 <p>Results: <span id="result"></span></p>
 
+
 <script> 
     let good = 0;
     let oops =0;
@@ -38,6 +40,33 @@ function checkAuthor() {
     }
     const resultElement = document.getElementById("result");
     resultElement.textContent = `Correct guess ${good} | Wrong guess ${oops}`;
+}
+
+
+</script>
+
+    <div class ="container">
+    <img src="Agra.jpg"  id= "imageOfCity" width="100" height="100" />
+     <button type = "button" onclick="selectImage()" >Check Image </button>
+</div>
+<script>
+    let useImage=1;
+    function selectImage() {
+    switch (useImage) {
+        case 1:
+            document.getElementById("imageOfCity").src = "Agra.jpg";
+            useImage=2;
+            break;
+        case 2:
+            document.getElementById("imageOfCity").src = "Victoria.jpg";
+            useImage=3;
+            break;
+        case 3:
+            document.getElementById("imageOfCity").src = "Yokohama.jpg";
+            useImage=1;
+            break;
+        }
+
 }
 </script>
 
