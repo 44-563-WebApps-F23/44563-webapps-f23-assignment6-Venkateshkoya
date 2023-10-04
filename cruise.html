@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Using Check Boxes</title>
+     </head>
+<body>
+
+<h2>Venkatesh Koya goes on a cruise</h2>
+
+<form>
+    <div class ="form-group">
+        <label><input type ="checkbox" id ="firstcheckbox" value="True"> Shares Cabin</label>
+        <label><input type ="checkbox" id ="secondcheckbox" value="True"> Breakfast</label>
+        <label><input type ="checkbox" id ="thirdcheckbox" value="True"> Pool Pass</label>
+    </div>
+    <input type="button" onclick="selectCruise()" value="Select a Cruise">
+</form>
+
+<p id="cruise result">This text will be replaced </p>
+
+<br>
+
+
+<script> 
+let my_cruise = {};
+
+function selectCruise(){
+   my_cruise={};
+   my_cruise.share = document.getElementById('firstcheckbox').checked;
+   my_cruise.breakfast = document.getElementById('secondcheckbox').checked;
+   my_cruise.pool = document.getElementById('thirdcheckbox').checked;
+
+   document.getElementById('cruise result').innerHTML = JSON.stringify(my_cruise);
+}
+</script>
+
+</body>
+</html> 
