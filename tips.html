@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Tips to follow</title>
+ </head>
+<body>
+
+<h2>Venkatesh Koya shows tip amounts</h2>
+
+<script>
+    function tips(){
+        var baseamount = parseInt(document.getElementById('baseamt').value)
+        var tipamount = parseInt(document.getElementById('tipamt').value)
+        var myOutput=""
+        var toShow=""
+        myOutput = "Tip are: " + tipamount + "% is" + (baseamount*tipamount)/100
+        for(i=1; i<=4; i++){
+            tipamount = tipamount + 4
+            priceamount = (baseamount * tipamount)/100;
+            toShow = toShow + tipamount + "% is" + priceamount + ";"
+        }
+        myOutput = myOutput+toShow
+        document.getElementById("tipdisplay").innerHTML = myOutput
+    }
+    function chooseOp(){
+        var baseamount = parseInt(document.getElementById('baseamt').value)
+        var tipamount = parseInt(document.getElementById('tipamt').value)
+        var res=0
+        if(document.getElementById('red').checked){
+            res = baseamount + tipamount
+        }
+        if(document.getElementById('blue').checked){
+            res = baseamount-tipamount
+        }
+        if(document.getElementById('green').checked){
+            res = baseamount*tipamount
+        }
+        document.getElementById("radiosec").innerHTML = res
+
+    }
+</script>
+<label for="form1_age"> Enter base amount</label>
+<input type="number" name="baseamount" id="baseamt" value="50"> <br>
+<label for="form1_age"> Enter the tip amount</label>
+<input type="number" name="tipamount" id="tipamt" value="15"><br>
+<input type="button" onclick="tips()" value="Show tip">
+<p id="tipdisplay"></p>
+<form>
+    <input type="radio" id="red" name="color" value="sum"> 
+    <label for="sum">sum</label> </br>
+    <input type="radio" id="blue" name="color" value="difference">
+    <label for="diff">diff</label> </br>
+    <input type="radio" id="green" name="color" value="product">
+    <label for="mult">mult</label>  
+    <input type="button" onclick="chooseOp()" value="Get values from radio button">
+</form>
+<p id="radiosec">This will be replaced.</p>
+
+</body>
+</html> 
