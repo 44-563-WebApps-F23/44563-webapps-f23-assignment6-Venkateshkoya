@@ -2,8 +2,9 @@
 <html>
  <head>
     <title>Tips to follow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" >
  </head>
-<body>
+<body class="container mt-5">
 
 <h2>Venkatesh Koya shows tip amounts</h2>
 
@@ -39,13 +40,18 @@
 
     }
 </script>
+
+<form class="mb-4">
 <label for="form1_age"> Enter base amount</label>
 <input type="number" name="baseamount" id="baseamt" value="50"> <br>
 <label for="form1_age"> Enter the tip amount</label>
 <input type="number" name="tipamount" id="tipamt" value="15"><br>
 <input type="button" onclick="tips()" value="Show tip">
+</form>
+
 <p id="tipdisplay"></p>
-<form>
+
+<form class="mb-4">
     <input type="radio" id="red" name="color" value="sum"> 
     <label for="sum">sum</label> </br>
     <input type="radio" id="blue" name="color" value="difference">
